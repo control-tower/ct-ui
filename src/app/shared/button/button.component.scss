@@ -1,0 +1,45 @@
+@import '../../../assets/styles/base.scss';
+
+.c-button {
+  border: 0;
+  cursor: pointer;
+  font-family: $font-family-1;
+  outline: 0;
+  width: 100%;
+
+  &.-basic {
+    background-color: $color-3;
+    border: 2px solid $color-2;
+    box-shadow: 4px 4px 0 $color-2;
+    padding: 15px 40px;
+    position: relative;
+
+    &:active {
+      box-shadow: 0 0 0 transparent;
+      top: 4px;
+    }
+
+    &.-small-table {
+      float: right;
+      padding: 10px;
+    }
+  }
+
+  &.-blue {
+    background-color: $color-1;
+    border: 2px solid $color-3;
+    box-shadow: 4px 4px 0 $color-3;
+    color: $color-3;
+    padding: 15px 40px;
+    position: relative;
+
+    &:active {
+      box-shadow: 0 0 0 transparent;
+      top: 4px;
+    }
+  }
+
+  &.-distance-right {
+    margin-right: 20px;
+  }
+}

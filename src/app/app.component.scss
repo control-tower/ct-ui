@@ -1,0 +1,40 @@
+@import '../assets/styles/base.scss';
+
+.l-content {
+  height: 100%;
+  padding: 40px 20px;
+  position: absolute;
+  right: 0;
+  width: calc(100% - 100px);
+
+  @media #{$mq-tablet} {
+    padding: 40px 20px;
+    width: calc(100% - 250px);
+  }
+
+  &.-basic {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &.-list-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .card-padding {
+      width: 100%;
+
+      @media #{$mq-tablet} {
+        width: calc(100% * (1/2) - 20px);
+      }
+
+      @media #{$mq-laptop} {
+        width: calc(100% * (1/3) - 20px);
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+@import 'settings';
+
+* {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+
+  &::after {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+
+  &::before {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+  }
+}
+
+body,
+html {
+  background-color: $color-4;
+  font-family: $font-family-2;
+  font-size: $font-size-normal;
+  font-weight: $font-weight-normal;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+  font-family: $font-family-1;
+}
+
+:global .hidden {
+  display: none;
+}
