@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'http://api.resourcewatch.org'
+  apiUrl: 'https://api.resourcewatch.org'
 };
