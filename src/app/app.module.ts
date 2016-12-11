@@ -5,7 +5,7 @@ import { EndpointsComponent } from './pages/endpoints/endpoints.component';
 import { PluginsComponent } from './pages/plugins/plugins.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Injectable, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule, RequestOptions } from '@angular/http';
 import { StoreModule } from '@ngrx/store';
 import { RouterStoreModule } from '@ngrx/router-store';
@@ -45,7 +45,6 @@ import {SELECTORS} from './selectors';
 import {LoggedInGuard} from './guards/logged-in.guard';
 import { OauthRequestOptions } from './services/oauth-requestoptions.service';
 import { reducer } from './reducers';
-import { SelectComponent } from './shared/select/select.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +54,6 @@ import { SelectComponent } from './shared/select/select.component';
     MicroservicesComponent,
     ProfileComponent,
     UsersComponent,
-    SelectComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +62,7 @@ import { SelectComponent } from './shared/select/select.component';
     DashboardComponentModule,
     ComponentsModule,
     Angular2DataTableModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
     SimpleNotificationsModule, 
     RouterModule.forRoot(routes),

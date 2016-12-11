@@ -1,3 +1,10 @@
+app-button {
+  margin-right: 10px;
+  float: right;
+  &:first-of-type {
+    margin-right: 0;
+  }
+}
 .datatable{
   margin-top: 10px;
   &.scroll-vertical {

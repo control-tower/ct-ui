@@ -3,7 +3,11 @@ import { UserAction } from './../../actions/user';
 import { Subject } from 'rxjs/Rx';
 import { Subscription } from 'rxjs/Subscription';
 import { IUser } from './../../models/user';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+
+const emailRegex = '^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$';
+
 
 @Component({
   selector: 'app-users',
@@ -16,14 +20,17 @@ export class UsersComponent implements OnInit {
   usersFilter: IUser[]
   userSub: Subscription
   filterText: string = ''
+  @ViewChild('createUserModal') createUserModal
+
+  registerUserForm: FormGroup
 
   private searchUserStream = new Subject<string>()
 
-  constructor(private userAction: UserAction, private userSelector: UserSelector) { }
+  constructor(private userAction: UserAction, private userSelector: UserSelector, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.userAction.searchUsers();
-    this.userSub = this.userSelector.getUsers().do(x => console.log(x)).map((data) => data.map((el) => Object.assign({}, el))).subscribe((data) => {
+    this.userSub = this.userSelector.getUsers().map((data) => data.map((el) => Object.assign({}, el))).subscribe((data) => {
       this.users = data;
       this.filter(this.filterText);
     });
@@ -31,11 +38,29 @@ export class UsersComponent implements OnInit {
     this.searchUserStream
       .debounceTime(300)
       .distinctUntilChanged()
-      .map(term => this.filterText = term)      
+      .map(term => this.filterText = term)
       .subscribe(term => this.filter(term));
+
+    this.registerUserForm = this.formBuilder.group({
+      'email': ['', Validators.compose([Validators.required, Validators.pattern(emailRegex)])],
+      'passwords': this.formBuilder.group({
+        password: ['', Validators.required],
+        repeat: ['', Validators.required]
+      }, { validator: this.areEqual })
+    });
   }
 
-  private filter(term){
+  areEqual(group: FormGroup) {
+    if((<any>group.controls).password.value === (<any>group.controls).repeat.value) {
+      return null;
+    }
+
+    return {
+      areEqual: true
+    };
+  }
+
+  private filter(term) {
     this.usersFilter = this.users.filter(d => {
       if (term) {
         return d.email && d.email.indexOf(term) >= 0;
@@ -44,7 +69,7 @@ export class UsersComponent implements OnInit {
     });
   }
 
-  refresh(){
+  refresh() {
     this.userAction.searchUsers();
   }
 
@@ -57,8 +82,22 @@ export class UsersComponent implements OnInit {
   }
 
   updateRole(user, role) {
-    this.userAction.updateUser(user._id, {role: role});
+    this.userAction.updateUser(user._id, { role: role });
   }
 
-  
+  create() {
+    this.createUserModal.open();
+    this.registerUserForm.reset();
+  }
+
+  saveUser(){
+    if(this.registerUserForm.valid){
+      let user = this.registerUserForm.value;
+      this.userAction.createUser({
+        email: user.email,
+        password: user.passwords.password,
+        repeatPassword: user.passwords.repeat
+      });
+    }
+  }
 }

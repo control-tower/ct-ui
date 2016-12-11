@@ -1,3 +1,4 @@
+import { PluginSelector } from './plugin';
 import { DashboardSelector } from './dashboard';
 import { AuthSelector } from './auth';
 import { UserSelector } from './user';
@@ -11,5 +12,6 @@ export var SELECTORS: Array<any> = [
   { provide: UserSelector, useClass: UserSelector },
   { provide: AuthSelector, useClass: AuthSelector },
   { provide: DashboardSelector, useClass: DashboardSelector },
+  { provide: PluginSelector, useClass: PluginSelector },
   
 ];

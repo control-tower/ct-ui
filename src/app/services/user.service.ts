@@ -21,4 +21,9 @@ export class UserService {
     return this.http.patch(url, user).map(res => res.json() || {});
   }
 
+  createUser(user){
+    let url = `${UserService.BASE_URL}/auth/sign-up`;
+    return this.http.post(url, user).map(res => res.json() || {});
+  }
+
 }

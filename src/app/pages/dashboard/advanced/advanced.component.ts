@@ -2,7 +2,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { DashboardSelector } from './../../../selectors/dashboard';
 import { DashboardAction } from './../../../actions/dashboard';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 const now = new Date();
 

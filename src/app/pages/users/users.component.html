@@ -1,6 +1,7 @@
 <div class="l-content">
   <div class="clearfix">
     <app-search placeholder="Search users" (update)='updateFilter($event)'></app-search>
+    <app-button basic="'true'" table="'true'" text="Create User" (click)="create($event)"></app-button>
     <app-button basic="'true'" table="'true'" text="Refresh result" (click)="refresh($event)"></app-button>
   </div>
   <swui-datatable class='material scroll-vertical' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
@@ -27,9 +28,27 @@
           <option [value]="'MANAGER'">MANAGER</option>
           <option [value]="'USER'">USER</option>
         </app-select>
-        
       </template>
     </swui-datatable-column>
-    
   </swui-datatable>
 </div>
+<app-modal #createUserModal [title]="'Create new user'" (close)="saveUser()">
+  <form [formGroup]="registerUserForm">
+    <div class="form-group" [class.has-danger]="registerUserForm.controls.email.dirty && registerUserForm.controls.email.errors">
+      <input type="email" placeholder="Email" class="input-dialog" formControlName="email" />
+      <div class="form-control-feedback" *ngIf="registerUserForm.controls.email.dirty && registerUserForm.controls.email.errors?.required">Field required</div>
+      <div class="form-control-feedback" *ngIf="registerUserForm.controls.email.dirty && registerUserForm.controls.email.errors?.pattern">Email invalid</div>
+    </div>
+    <div formGroupName="passwords">
+      <div class="form-group" [class.has-danger]="registerUserForm.controls.passwords.controls.password.dirty && registerUserForm.controls.passwords.controls.password.errors">
+        <input type="password" placeholder="Password" class="input-dialog" formControlName="password">
+        <div class="form-control-feedback" *ngIf="registerUserForm.controls.passwords.controls.password.dirty && registerUserForm.controls.passwords.controls.password.errors?.required">Field required</div>
+      </div>
+      <div class="form-group" [class.has-danger]="registerUserForm.controls.passwords.controls.repeat.dirty && (registerUserForm.controls.passwords.controls.repeat.errors || registerUserForm.controls.passwords.errors)">
+        <input type="password" placeholder="Repeat password" class="input-dialog" formControlName="repeat">
+        <div class="form-control-feedback" *ngIf="registerUserForm.controls.passwords.controls.repeat.dirty && registerUserForm.controls.passwords.controls.repeat.errors?.required">Field required</div>
+        <div class="form-control-feedback" *ngIf="registerUserForm.controls.passwords.controls.repeat.dirty && registerUserForm.controls.passwords.errors?.areEqual">Password and Repeat password are not equal</div>
+      </div>
+    </div>
+  </form>
+</app-modal>

@@ -1,3 +1,4 @@
+import { PluginService } from './plugin.service';
 import { UserService } from './user.service';
 import { EndpointService } from './endpoint.service';
 import { MicroserviceService } from './microservice.service';
@@ -12,4 +13,5 @@ export var SERVICES: Array<any> = [
   { provide: EndpointService, useClass: EndpointService }, 
   { provide: UserService, useClass: UserService }, 
   { provide: DashboardService, useClass: DashboardService }, 
+  { provide: PluginService, useClass: PluginService }, 
 ];

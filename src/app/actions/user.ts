@@ -26,7 +26,7 @@ export class UserAction {
   searchUsers(){
     this.UserService.getUsers().subscribe(data => {
       this.store.dispatch(new SearchAction(data));
-      this.notificationAction.info('Microservices obtained successfully');
+      this.notificationAction.info('Users obtained successfully');
     }, () => this.notificationAction.error('Error obtaining users'));
   }
 
@@ -35,6 +35,17 @@ export class UserAction {
       this.notificationAction.info('User update successfully');
       this.searchUsers()
     }, () => this.notificationAction.error('Error updating user'));
+  }
+
+  createUser(user){
+    this.UserService.createUser(user).subscribe(() => {
+      this.notificationAction.info('User created successfully');
+      this.searchUsers()
+    }, (e) => {
+      console.log(e);
+       this.notificationAction.error(`Error creating user: ${e}`);
+
+    });
   }
 
 }

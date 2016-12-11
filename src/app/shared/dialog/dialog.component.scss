@@ -1,0 +1,40 @@
+@import '../../../assets/styles/base.scss';
+
+.c-modal-question {
+  background-color: $color-3;
+  left: 50%;
+  min-width: 600px;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 1;
+  margin-top: 10%;
+
+  h3 {
+    color: $color-2;
+    font-family: $font-family-1;
+    font-size: $font-size-xxnormal;
+    text-align: center;
+  }
+
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    app-button:first-of-type {
+       margin-right: 20px;
+    }
+  }
+
+  .input-dialog {
+    display: block;
+    height: 50px;
+    margin: 25px auto 0;
+    padding: 10px;
+    width: 80%;
+  }
+}
+

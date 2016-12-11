@@ -14,3 +14,14 @@
    height: 0;
    clear: both;
 }
+
+
+/* dialog modal */
+.dialog {
+  background-color: rgba($color-2, .95);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

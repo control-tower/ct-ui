@@ -1,3 +1,4 @@
+import { PluginAction } from './plugin';
 import { NotificationAction } from './notification';
 import { DashboardAction } from './dashboard';
 import { AuthAction } from './auth';
@@ -13,4 +14,5 @@ export var ACTIONS: Array<any> = [
   { provide: AuthAction, useClass: AuthAction },
   { provide: DashboardAction, useClass: DashboardAction },
   { provide: NotificationAction, useClass: NotificationAction },
+  { provide: PluginAction, useClass: PluginAction },
 ];

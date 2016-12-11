@@ -1,0 +1,18 @@
+<div class="card-padding">
+	<div class="c-card-list">
+		<button type="button" class="button-refresh" (click)="flush($event)" *ngIf="plugin.name === 'redisCache'" >Flush cache</button>
+		<div class="card-title">
+			<h2>
+				{{plugin.name}}
+			</h2>
+		</div>
+		<div class="card-main">
+			<h3>File/module: {{plugin.mainFile}}</h3>
+		</div>
+		<div class="card-button-contain">
+			<button (click)="editPlugin()">Edit</button>
+      <button *ngIf="plugin.active" class="green-active" (click)="toggleActivePlugin(false)">Desactivate</button>
+			<button *ngIf="!plugin.active" (click)="toggleActivePlugin(true)">Activate</button>
+		</div>
+	</div>
+</div>

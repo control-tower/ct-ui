@@ -4,3 +4,10 @@
     height: 75vh;
   }
 }
+app-button {
+  margin-right: 10px;
+  float: right;
+  &:first-of-type {
+    margin-right: 0;
+  }
+}

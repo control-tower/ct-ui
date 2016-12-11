@@ -1,0 +1,11 @@
+<template ngbModalContainer #dialogToggle let-c="close" let-d="dismiss">
+  <div class="c-modal-question">
+    <h3>
+      {{question}}
+      <div>
+        <app-button basic="'true'" table="'true'" text="Cancel" (click)="d()"></app-button>
+        <app-button basic="'true'" table="'true'" text="Accept" (click)="c()"></app-button>
+      </div>
+    </h3>
+  </div>
+</template>
