@@ -16,7 +16,7 @@ export class MicroservicesComponent implements OnInit, OnDestroy {
   microservices: IMicroservice[]
   microservicesFilter: IMicroservice[]
   microserviceSub: Subscription
-  filterText: string
+  filterText: string = ''
 
   private searchMicroserviceStream = new Subject<string>()
 

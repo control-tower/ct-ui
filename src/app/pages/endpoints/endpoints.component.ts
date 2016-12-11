@@ -16,7 +16,7 @@ export class EndpointsComponent implements OnInit {
   endpoints: IEndpoint[]
   endpointsFilter: IEndpoint[]
   endpointSub: Subscription
-  filterText: string
+  filterText: string = ''
 
   private searchEndpointStream = new Subject<string>()
 

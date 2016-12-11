@@ -15,7 +15,7 @@ export class UsersComponent implements OnInit {
   users: IUser[]
   usersFilter: IUser[]
   userSub: Subscription
-  filterText: string
+  filterText: string = ''
 
   private searchUserStream = new Subject<string>()
 
