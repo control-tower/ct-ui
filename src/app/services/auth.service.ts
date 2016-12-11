@@ -32,7 +32,7 @@ export class TokenService {
 
   logout(): any {
     localStorage.removeItem('token');
-    window.location.href = `${environment.apiUrl}/auth?token=true&callbackUrl=${`${window.location.protocol}//${window.location.host}`}`;
+    window.location.href = `${environment.apiUrl}/auth?token=true&callbackUrl=${`${window.location.protocol}//${window.location.host}/${window.location.pathname}`}`;
   }
 
   getToken(): string {
