@@ -23,6 +23,7 @@ import {
 import {
   LocationStrategy,
   PathLocationStrategy,
+  HashLocationStrategy,
   APP_BASE_HREF
 } from '@angular/common';
 
@@ -77,7 +78,7 @@ import { SelectComponent } from './shared/select/select.component';
     LoggedInGuard,
     { provide: RequestOptions, useClass: OauthRequestOptions },
     { provide: APP_BASE_HREF, useValue: '/' },
-    { provide: LocationStrategy, useClass: PathLocationStrategy }
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
