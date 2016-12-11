@@ -25,7 +25,7 @@ export class LoggedInGuard implements CanActivate {
         }
       }, () => {
         reject();
-        window.location.href = `${LoggedInGuard.BASE_URL}?token=true&callbackUrl=${`${window.location.protocol}//${window.location.host}/${window.location.pathname}`}`;
+        window.location.href = `${LoggedInGuard.BASE_URL}?token=true&callbackUrl=${`${window.location.protocol}//${window.location.host}${window.location.pathname}`}`;
       });
     });
   }
