@@ -1,1 +1,1 @@
-<button class="c-button -blue" (onClick)="onClick($event)">{{text}}</button>
+<button class="c-button" [ngClass]="{'-blue': !basic, '-basic': basic, '-small-table': table}" (onClick)="onClick($event)">{{text}}</button>

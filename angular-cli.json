@@ -9,15 +9,18 @@
       "outDir": "dist",
       "assets": "assets",
       "index": "index.html",
-      "main": "main.ts",
+      "main": "main-polymer.ts",
       "test": "test.ts",
       "tsconfig": "tsconfig.json",
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.scss"
+        "styles.scss",
+        "../node_modules/font-awesome/css/font-awesome.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/bower_components/webcomponentsjs/webcomponents.min.js"
+      ],
       "environments": {
         "source": "environments/environment.ts",
         "dev": "environments/environment.ts",
@@ -38,7 +41,7 @@
     }
   },
   "defaults": {
-    "styleExt": "sass",
+    "styleExt": "scss",
     "prefixInterfaces": false
   }
 }

@@ -1,0 +1,39 @@
+<div class="l-content">
+  <div class="clearfix">
+    <app-search placeholder="Search endpoints" (update)='updateFilter($event)'></app-search>
+    <app-button basic="'true'" table="'true'" text="Refresh result" (click)="refresh($event)"></app-button>
+  </div>
+  <swui-datatable #mydatatable class='material expandable scroll-vertical' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+    [detailRowHeight]="100" [scrollbarV]="50" [rows]='endpointsFilter'>
+    <swui-datatable-row-detail>
+      <template let-row="row" swui-datatable-row-detail-template>
+        <div style="padding-left:35px;">
+          <div><strong>Redirects</strong></div>
+          <div></div>
+        </div>
+      </template>
+    </swui-datatable-row-detail>
+    <swui-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false">
+      <template let-row="row" swui-datatable-cell-template>
+        <a href="#" [class.icon-right]="!row.$$expanded" [class.icon-down]="row.$$expanded" title="Expand/Collapse Row" (click)="toggleExpandRow($event, row)">
+        </a>
+      </template>
+    </swui-datatable-column>
+    <swui-datatable-column name="Path" width="200">
+      <template let-row="row" let-value="value" swui-datatable-cell-template>
+        {{value}}
+      </template>
+    </swui-datatable-column>
+    <swui-datatable-column name="Method" width="80">
+      <template let-row="row" let-value="value" swui-datatable-cell-template>
+        {{value}}
+      </template>
+    </swui-datatable-column>
+    <swui-datatable-column name="Authenticated" width="200">
+      <template let-value="value" swui-datatable-cell-template>
+        <strong>{{value}}</strong>
+      </template>
+    </swui-datatable-column>
+    
+  </swui-datatable>
+</div>

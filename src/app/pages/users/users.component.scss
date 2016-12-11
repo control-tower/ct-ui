@@ -1,0 +1,22 @@
+@import '../../../assets/styles/base.scss';
+.datatable {
+  margin-top: 10px;
+  &.scroll-vertical {
+    height: 75vh;
+  }
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: $color-3;
+    border: 0;
+    border-bottom: 2px solid $color-2;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: $font-family-2;
+    max-width: 200px;
+    min-width: 100px;
+    outline: 0;
+    padding-bottom: 5px;
+    width: 100%;
+  }
+}

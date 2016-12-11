@@ -18,6 +18,10 @@ export class AuthService {
   isLoggedIn(): Promise<any> {   
     return this.http.get(`${AuthService.BASE_URL}/check-logged`).toPromise();    
   }
+
+  generateToken() {
+    return this.http.get(`${AuthService.BASE_URL}/generate-token`).map(res => res.json());
+  }
 }
 
 @Injectable()
@@ -38,6 +42,7 @@ export class TokenService {
   setToken(token: string) {
     localStorage.setItem('token', token);
   }
+  
 }
 
 export var AUTH_PROVIDERS: Array<any> = [

@@ -1,7 +1,18 @@
+import { UsersComponent } from './pages/users/users.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { MicroservicesComponent } from './pages/microservices/microservices.component';
+import { EndpointsComponent } from './pages/endpoints/endpoints.component';
+import { PluginsComponent } from './pages/plugins/plugins.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Injectable } from '@angular/core';
+import { NgModule, Injectable, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule, RequestOptions } from '@angular/http';
+import { StoreModule } from '@ngrx/store';
+import { RouterStoreModule } from '@ngrx/router-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { Angular2DataTableModule } from 'angular2-data-table';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import 'rxjs/Rx';
 
 import {
@@ -11,69 +22,64 @@ import {
 } from '@angular/router';
 import {
   LocationStrategy,
-  PathLocationStrategy
+  PathLocationStrategy,
+  APP_BASE_HREF
 } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './shared/menu/menu.component';
-import { ButtonComponent } from './shared/button/button.component';
-import { PluginsComponent } from './plugins/plugins.component';
-import { EndpointsComponent } from './endpoints/endpoints.component';
-import { MicroservicesComponent } from './microservices/microservices.component';
-import { ProfileComponent } from './profile/profile.component';
-import { UsersComponent } from './users/users.component';
-
+import { routes } from './routes';
 import {
-  routes as dashboardChildRoutes,
-  DashboardComponent,
   DashboardComponentModule
-} from './dashboard/dashboard.component';
+} from './pages/dashboard/dashboard.component';
+import { ComponentsModule } from './shared';
+
 
 
 /*
  * Services
  */
-import {AUTH_PROVIDERS} from './services/auth.service';
+import {SERVICES} from './services';
+import {ACTIONS} from './actions';
+import {SELECTORS} from './selectors';
 import {LoggedInGuard} from './guards/logged-in.guard';
 import { OauthRequestOptions } from './services/oauth-requestoptions.service';
-
-const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent, children: dashboardChildRoutes, canActivate: [LoggedInGuard] },
-  { path: 'plugins', component: PluginsComponent, canActivate: [LoggedInGuard] },
-  { path: 'endpoints', component: EndpointsComponent, canActivate: [LoggedInGuard] },
-  { path: 'microservices', component: MicroservicesComponent, canActivate: [LoggedInGuard] },
-  { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
-  { path: 'users', component: UsersComponent, canActivate: [LoggedInGuard] },
-];
-
-
-
+import { reducer } from './reducers';
+import { SelectComponent } from './shared/select/select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent,
-    ButtonComponent,
     PluginsComponent,
     EndpointsComponent,
     MicroservicesComponent,
     ProfileComponent,
-    UsersComponent
+    UsersComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     DashboardComponentModule,
+    ComponentsModule,
+    Angular2DataTableModule,
+    NgbModule.forRoot(),
+    SimpleNotificationsModule, 
     RouterModule.forRoot(routes),
+    StoreModule.provideStore(reducer),
+    RouterStoreModule.connectRouter(),
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
   ],
   providers: [
-    AUTH_PROVIDERS,
+    SERVICES,
+    ACTIONS,
+    SELECTORS,
     LoggedInGuard,
     { provide: RequestOptions, useClass: OauthRequestOptions },
+    { provide: APP_BASE_HREF, useValue: '/' },
     { provide: LocationStrategy, useClass: PathLocationStrategy }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

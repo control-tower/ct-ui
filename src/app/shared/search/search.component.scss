@@ -1,0 +1,15 @@
+@import '../../../assets/styles/base.scss';
+
+.c-search {
+  background-color: $color-3;
+  float: left;
+
+  input {
+    border: 2px solid $color-2;
+    font-family: $font-family-1;
+    min-width: 300px;
+    outline: 0;
+    padding: 10px;
+    width: 100%;
+  }
+}

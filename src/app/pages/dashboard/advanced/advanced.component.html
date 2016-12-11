@@ -1,0 +1,34 @@
+<form class="form-inline contain-date" >
+  
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="from" [(ngModel)]="from" ngbDatepicker #fromPicker="ngbDatepicker">
+      <div class="input-group-addon" (click)="fromPicker.toggle()" >
+        <i class="fa fa-calendar" aria-hidden="true" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="to" [(ngModel)]="to" ngbDatepicker #toPicker="ngbDatepicker">
+      <div class="input-group-addon" (click)="toPicker.toggle()" >
+        <i class="fa fa-calendar" aria-hidden="true" style="width: 1.2rem; height: 1rem; cursor: pointer;"></i>
+      </div>
+    </div>
+  </div>
+  <div class="form-group -button-refresh">
+    <app-button basic="'true'" table="'true'" text="Filter" (click)="filter($event)"></app-button>
+  </div>
+</form>
+<google-chart
+      type="treemap"
+      options='{"showScale": true, "maxPostDepth": 2}'
+      [data]='advancedInfo.avgByRequest'>
+  </google-chart>
+
+  <google-chart
+    type="area"
+    options='{"title": "Requests"}'
+    cols='[{"label": "Date", "type": "string"},{"label": "Num request", "type": "number"}]'
+    [rows]='advancedInfo.requestByDay'>
+  </google-chart>
