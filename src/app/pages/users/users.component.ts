@@ -15,6 +15,7 @@ export class UsersComponent implements OnInit {
   users: IUser[]
   usersFilter: IUser[]
   userSub: Subscription
+  filterText: string
 
   private searchUserStream = new Subject<string>()
 
@@ -24,12 +25,13 @@ export class UsersComponent implements OnInit {
     this.userAction.searchUsers();
     this.userSub = this.userSelector.getUsers().do(x => console.log(x)).map((data) => data.map((el) => Object.assign({}, el))).subscribe((data) => {
       this.users = data;
-      this.filter('');
+      this.filter(this.filterText);
     });
 
     this.searchUserStream
       .debounceTime(300)
-      .distinctUntilChanged()      
+      .distinctUntilChanged()
+      .map(term => this.filterText = term)      
       .subscribe(term => this.filter(term));
   }
 

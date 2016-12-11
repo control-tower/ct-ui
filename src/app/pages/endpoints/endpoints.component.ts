@@ -16,6 +16,7 @@ export class EndpointsComponent implements OnInit {
   endpoints: IEndpoint[]
   endpointsFilter: IEndpoint[]
   endpointSub: Subscription
+  filterText: string
 
   private searchEndpointStream = new Subject<string>()
 
@@ -25,12 +26,13 @@ export class EndpointsComponent implements OnInit {
     this.endpointAction.searchEndpoints();
     this.endpointSub = this.endpointSelector.getEndpoints().map((data) => data.map((el) => Object.assign({}, el))).subscribe((data) => {
       this.endpoints = data;
-      this.filter('');
+      this.filter(this.filterText);
     });
 
     this.searchEndpointStream
       .debounceTime(300)
-      .distinctUntilChanged()   
+      .distinctUntilChanged() 
+      .map(term => this.filterText = term)  
       .subscribe(term => this.filter(term.toLowerCase()));
   }
 

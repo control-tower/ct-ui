@@ -16,6 +16,7 @@ export class MicroservicesComponent implements OnInit, OnDestroy {
   microservices: IMicroservice[]
   microservicesFilter: IMicroservice[]
   microserviceSub: Subscription
+  filterText: string
 
   private searchMicroserviceStream = new Subject<string>()
 
@@ -25,12 +26,13 @@ export class MicroservicesComponent implements OnInit, OnDestroy {
     this.microserviceAction.searchMicroservices();
     this.microserviceSub = this.microserviceSelector.getMicroservices().map((data) => data.map((el) => Object.assign({}, el))).subscribe((data) => {
       this.microservices = data;
-      this.filter('');
+      this.filter(this.filterText);
     });
 
     this.searchMicroserviceStream
       .debounceTime(300)
-      .distinctUntilChanged()      
+      .distinctUntilChanged()  
+      .map(term => this.filterText = term)    
       .subscribe(term => this.filter(term));
   }
 
