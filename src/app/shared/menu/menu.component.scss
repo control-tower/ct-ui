@@ -24,21 +24,6 @@
         font-size: $font-size-big;
         padding: 0 30px 25px;
       }
-
-      &::before {
-        background-color: $color-3;
-        content: '';
-        display: block;
-        height: 2px;
-        position: absolute;
-        top: -10px;
-        width: 40px;
-
-        @media #{$mq-tablet} {
-          height: 4px;
-          width: 84px;
-        }
-      }
     }
 
     .sidebar-option {
@@ -68,7 +53,7 @@
 
     app-button {
       display: block;
-      margin: 55px auto 0;
+      margin: 20px auto 0;
       width: calc(100% - 50px);
     }
   }
