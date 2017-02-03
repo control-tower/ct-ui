@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://api.resourcewatch.org'
+  apiUrl: 'http://production-api.globalforestwatch.org'
 };
