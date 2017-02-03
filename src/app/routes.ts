@@ -5,6 +5,7 @@ import { EndpointsComponent } from './pages/endpoints/endpoints.component';
 import { MicroservicesComponent } from './pages/microservices/microservices.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { UsersComponent } from './pages/users/users.component';
+import { routes as applicationChildRoutes, ApplicationComponent } from './pages/applications/application.component';
 
 import {
   routes as dashboardChildRoutes,
@@ -20,4 +21,5 @@ export const routes: Routes = [
   { path: 'microservices', component: MicroservicesComponent, canActivate: [LoggedInGuard] },
   { path: 'profile', component: ProfileComponent, canActivate: [LoggedInGuard] },
   { path: 'users', component: UsersComponent, canActivate: [LoggedInGuard] },
+  { path: 'applications', component: ApplicationComponent, children: applicationChildRoutes, canActivate: [LoggedInGuard] },
 ];

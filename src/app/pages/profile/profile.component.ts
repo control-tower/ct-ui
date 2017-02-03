@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
   constructor(private authAction: AuthAction, private authSelector: AuthSelector) { }
 
   ngOnInit() {
-    this.authAction.generateToken();
+    this.authAction.initToken();
     this.token$ = this.authSelector.getToken();
   }
 

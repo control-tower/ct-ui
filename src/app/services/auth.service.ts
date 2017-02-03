@@ -8,6 +8,8 @@ export class AuthService {
 
   static BASE_URL: string = `${environment.apiUrl}/auth`;
 
+  _user: any;
+
   constructor(private http: Http) {
   }
 
@@ -15,8 +17,29 @@ export class AuthService {
     localStorage.removeItem('username');
   }
 
-  isLoggedIn(): Promise<any> {   
-    return this.http.get(`${AuthService.BASE_URL}/check-logged`).toPromise();    
+  isLoggedIn(): Promise<any> {
+    return this.http.get(`${AuthService.BASE_URL}/check-logged`).map(res => res.json()).toPromise().then((data) => this._user = data);
+  }
+
+  get user() {
+    return this._user;
+  }
+
+  getRoleInApp(slug) {
+    if (this._user && this._user.roles) {
+      const app = this._user.roles.find((role) => role.name === slug);
+      if (app) {
+        return app.role;
+      }
+    }
+    return null;
+  }
+
+  getApplications() {
+    if (this._user && this._user.roles) {
+      return this._user.roles.map((role) => role.name );
+    }
+    return [];
   }
 
   generateToken() {
@@ -26,7 +49,7 @@ export class AuthService {
 
 @Injectable()
 export class TokenService {
-  
+
   constructor() {
   }
 
@@ -42,7 +65,7 @@ export class TokenService {
   setToken(token: string) {
     localStorage.setItem('token', token);
   }
-  
+
 }
 
 export var AUTH_PROVIDERS: Array<any> = [

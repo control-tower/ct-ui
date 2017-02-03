@@ -32,6 +32,10 @@ import { routes } from './routes';
 import {
   DashboardComponentModule
 } from './pages/dashboard/dashboard.component';
+
+import {
+  ApplicationComponentModule
+} from './pages/applications/application.component';
 import { ComponentsModule } from './shared';
 
 
@@ -60,11 +64,12 @@ import { reducer } from './reducers';
     FormsModule,
     HttpModule,
     DashboardComponentModule,
+    ApplicationComponentModule,
     ComponentsModule,
     Angular2DataTableModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
-    SimpleNotificationsModule, 
+    SimpleNotificationsModule,
     RouterModule.forRoot(routes),
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),

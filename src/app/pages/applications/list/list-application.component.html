@@ -1,0 +1,49 @@
+<div class="l-content">
+  <div class="clearfix">
+    <app-search placeholder="Search applications" (update)='updateFilter($event)'></app-search>
+    <app-button basic="'true'" table="'true'" text="Create Applications" (click)="create($event)"></app-button>
+    <app-button basic="'true'" table="'true'" text="Refresh result" (click)="refresh($event)"></app-button>
+  </div>
+  <swui-datatable class='material scroll-vertical' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+    [detailRowHeight]="100" [scrollbarV]="50" [rows]='applicationsFilter'>
+    <swui-datatable-column name="Name" width="200">
+      <template let-row="row" let-value="value" swui-datatable-cell-template>
+        {{value}}
+      </template>
+    </swui-datatable-column>
+    <swui-datatable-column name="Slug" width="80">
+      <template let-row="row" let-value="value" swui-datatable-cell-template>
+        {{value}}
+      </template>
+    </swui-datatable-column>
+    <swui-datatable-column name="Role" width="300">
+      <template let-row="row" let-value="value" swui-datatable-cell-template>
+         <strong>{{value || 'ADMIN'}}</strong>
+      </template>
+    </swui-datatable-column>
+    <swui-datatable-column width="300">
+      <template let-row="row" let-value="value" swui-datatable-cell-template>
+          <a [routerLink]="['../detail', row.slug]">Ver</a>
+      </template>
+    </swui-datatable-column>
+  </swui-datatable>
+</div>
+
+<app-modal #createApplicationModal [title]="'Create new application'" (close)="saveApplication()">
+  <form [formGroup]="createApplicationForm">
+    <div class="form-group" [class.has-danger]="createApplicationForm.controls.name.dirty && createApplicationForm.controls.name.errors">
+      <input type="text" placeholder="name" class="input-dialog" formControlName="name" />
+      <div class="form-control-feedback" *ngIf="createApplicationForm.controls.name.dirty && createApplicationForm.controls.name.errors?.required">Field required</div>
+    </div>
+    <div class="form-group" [class.has-danger]="createApplicationForm.controls.allowedApplications.dirty && createApplicationForm.controls.allowedApplications.errors">
+      <select formControlName="allowedApplications" class="input-dialog" placeholder="Allowed applications" multiple>
+        <option *ngFor="let application of allowedApplications" [value]="application">{{application}}</option>
+      </select>
+    </div>
+    <div class="form-group" [class.has-danger]="createApplicationForm.controls.allowedDomains.dirty && createApplicationForm.controls.allowedDomains.errors">
+      <input type="text" placeholder="Allowed domains" class="input-dialog" formControlName="allowedDomains" />
+    </div>
+  </form>
+</app-modal>
+
+

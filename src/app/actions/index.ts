@@ -1,3 +1,4 @@
+import { ApplicationAction } from './application.action';
 import { PluginAction } from './plugin';
 import { NotificationAction } from './notification';
 import { DashboardAction } from './dashboard';
@@ -15,4 +16,5 @@ export var ACTIONS: Array<any> = [
   { provide: DashboardAction, useClass: DashboardAction },
   { provide: NotificationAction, useClass: NotificationAction },
   { provide: PluginAction, useClass: PluginAction },
+  { provide: ApplicationAction, useClass: ApplicationAction },
 ];

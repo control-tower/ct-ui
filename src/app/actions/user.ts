@@ -21,24 +21,24 @@ export type Actions = SearchAction;
 @Injectable()
 export class UserAction {
 
-  constructor(private UserService: UserService, private store: Store<State>, private notificationAction: NotificationAction){}
+  constructor(private userService: UserService, private store: Store<State>, private notificationAction: NotificationAction){}
 
   searchUsers(){
-    this.UserService.getUsers().subscribe(data => {
+    this.userService.getUsers().subscribe(data => {
       this.store.dispatch(new SearchAction(data));
       this.notificationAction.info('Users obtained successfully');
     }, () => this.notificationAction.error('Error obtaining users'));
   }
 
   updateUser(id, user){
-    this.UserService.updateUser(id, user).subscribe(() => {
+    this.userService.updateUser(id, user).subscribe(() => {
       this.notificationAction.info('User update successfully');
       this.searchUsers()
     }, () => this.notificationAction.error('Error updating user'));
   }
 
   createUser(user){
-    this.UserService.createUser(user).subscribe(() => {
+    this.userService.createUser(user).subscribe(() => {
       this.notificationAction.info('User created successfully');
       this.searchUsers()
     }, (e) => {

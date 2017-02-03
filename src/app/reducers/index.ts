@@ -12,6 +12,7 @@ import * as user from './user';
 import * as auth from './auth';
 import * as dashboard from './dashboard';
 import * as plugin from './plugin';
+import * as application from './application.reducer';
 
 
 export interface State {
@@ -21,6 +22,7 @@ export interface State {
   auth: auth.State
   dashboard: dashboard.State
   plugin: plugin.State
+  application: application.State
 }
 
 const reducers = {
@@ -31,6 +33,7 @@ const reducers = {
   auth: auth.reducer,
   dashboard: dashboard.reducer,
   plugin: plugin.reducer,
+  application: application.reducer,
 };
 
 const developmentReducer: ActionReducer<State> = compose(storeFreeze, combineReducers)(reducers);

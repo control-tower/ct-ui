@@ -1,0 +1,70 @@
+<div>
+  <h1>{{application?.name}}</h1>
+  <h2>Owner: {{application?.owner?.email}}</h2>
+  <app-button basic="'true'" table="'true'" text="Add user" (click)="addUser($event)"></app-button>
+</div>
+<ngb-tabset>
+  <ngb-tab title="Users">
+    <template ngbTabContent>
+      <swui-datatable class='material scroll-vertical' [columnMode]="'flex'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+        [scrollbarV]="50" [rows]='users'>
+        <swui-datatable-column name="Id" [flexGrow]="3">
+          <template let-row="row" let-value="value" swui-datatable-cell-template>
+            {{row._id}}
+          </template>
+        </swui-datatable-column>
+        <swui-datatable-column name="Email" [flexGrow]="3">
+          <template let-row="row" let-value="value" swui-datatable-cell-template>
+            {{value}}
+          </template>
+        </swui-datatable-column>
+        <swui-datatable-column name="Provider" [flexGrow]="2">
+          <template let-value="value" swui-datatable-cell-template>
+            <strong>{{value}}</strong>
+          </template>
+        </swui-datatable-column>
+        <swui-datatable-column name="Role" [flexGrow]="2">
+          <template let-row="row" let-value="value" swui-datatable-cell-template>
+            <app-select [value]="row.role" (update)="updateRole(row, $event)">
+              <option [value]="'ADMIN'">ADMIN</option>
+              <option [value]="'MANAGER'">MANAGER</option>
+              <option [value]="'USER'">USER</option>
+            </app-select>
+          </template>
+        </swui-datatable-column>
+        <swui-datatable-column [flexGrow]="1">
+          <template let-row="row" swui-datatable-cell-template>
+            <button type="button" class="close" aria-label="Delete" (click)="deleteUser(row)">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </template>
+        </swui-datatable-column>
+      </swui-datatable>
+    </template>
+  </ngb-tab>
+  <ngb-tab title="Stadistics">
+    <template ngbTabContent>
+      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+      master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+      dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+      iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+    </template>
+  </ngb-tab>
+</ngb-tabset>
+
+<app-modal #addUserModal [title]="'Add new user'" (close)="saveUser()">
+  <form [formGroup]="addUserForm">
+    <div class="form-group" [class.has-danger]="addUserForm.controls.email.dirty && addUserForm.controls.email.errors">
+      <input type="email" placeholder="Email" class="input-dialog" formControlName="email" />
+      <div class="form-control-feedback" *ngIf="addUserForm.controls.email.dirty && addUserForm.controls.email.errors?.required">Field required</div>
+      <div class="form-control-feedback" *ngIf="addUserForm.controls.email.dirty && addUserForm.controls.email.errors?.pattern">Email invalid</div>
+    </div>
+    <div class="form-group" [class.has-danger]="addUserForm.controls.role.dirty && addUserForm.controls.role.errors">
+      <select formControlName="role" class="input-dialog" placeholder="Role">
+        <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+
+      </select>
+      <div class="form-control-feedback" *ngIf="addUserForm.controls.role.dirty && addUserForm.controls.role.errors?.required">Field required</div>
+    </div>
+  </form>
+</app-modal>
