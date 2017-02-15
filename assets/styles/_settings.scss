@@ -1,0 +1,60 @@
+@import 'normalize';
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+
+
+// Font families
+$font-family-1: 'Roboto', sans-serif;
+$font-family-2: 'Roboto Slab', serif;
+$font-family-3: 'Montserrat', sans-serif;
+
+// Layout
+$max-width: 1280px;
+$wrap-mobile: 25px;
+$wrap-tablet: 55px;
+$wrap-desktop: 115px;
+
+
+// Font sizes
+$font-size-small: 12px;
+$font-size-normal: 15px;
+$font-size-xnormal: 17px;
+$font-size-mediun: 20px;
+$font-size-xxnormal: 25px;
+$font-size-big: 40px;
+$font-size-xbig: 60px;
+$font-size-huge: 80px;
+$font-size-xhuge: 120px;
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Colors
+$color-1: #3c61e5;
+$color-2: #111;
+$color-3: #fff;
+$color-4: #f7f7f7;
+$color-5: #d5dee5;
+$color-6: #858a94;
+$color-7: #ff4646;
+$color-8: #2448ca;
+$color-9: #5bbd66;
+
+
+
+// Breakpoints
+$breakpoint-mobile-small: 320px;
+$breakpoint-mobile-large: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop: 1024px;
+
+// Media queries
+$mq-mobile-small: 'screen and (min-width: #{$breakpoint-mobile-small})';
+$mq-mobile-large: 'screen and (min-width: #{$breakpoint-mobile-large})';
+$mq-tablet: 'screen and (min-width: #{$breakpoint-tablet})';
+$mq-laptop: 'screen and (min-width: #{$breakpoint-laptop})';

@@ -1,0 +1,1128 @@
+/*!
+ *  Map Glyphs 1.0 by @tedgrajeda - http://mapglyphs.com - @mapglyphs
+ *  License - http://mapglyphs.com/license (CC BY-ND 3.0)
+ */
+@font-face {
+	font-family: 'MapGlyphs';
+	src:url('assets/fonts/MapGlyphs.eot');
+	src:url('assets/fonts/MapGlyphs.eot?#iefix') format('embedded-opentype'),
+		url('assets/fonts/MapGlyphs.ttf') format('truetype'),
+		url('assets/fonts/MapGlyphs.woff') format('woff'),
+		url('assets/fonts/MapGlyphs.svg#mapglyphs') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:global .mg {
+  display: inline-block;
+  font-family: 'MapGlyphs';
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:global .mg-fw{
+	width:1.2em;
+	text-align:center
+}
+
+:global .mg-2x {
+  font-size: 2em;
+}
+:global .mg-3x {
+  font-size: 3em;
+}
+:global .mg-4x {
+  font-size: 4em;
+}
+:global .mg-5x {
+  font-size: 6em;
+}
+:global .mg-6x {
+  font-size: 8em;
+}
+:global .huge {
+  font-size: 140px;
+
+	&::after {
+		background-color: #3c61e5;
+		content: '';
+		display: inline-block;
+		height: 50px;
+		margin-left: 10px;
+		margin-right: 20px;
+		width: 4px;
+	}
+}
+
+/*Maps*/
+:global .map-sh-tc:before {
+	content: "\e755";
+}
+:global .map-sh-ai:before {
+	content: "\e756";
+}
+:global .map-sh-sh:before {
+	content: "\e757";
+}
+:global .map-sc:before {
+	content: "\e758";
+}
+:global .map-mv:before {
+	content: "\e759";
+}
+:global .map-mu:before {
+	content: "\e75a";
+}
+:global .map-io:before {
+	content: "\e75b";
+}
+:global .map-mo:before {
+	content: "\e75c";
+}
+:global .map-mh:before {
+	content: "\e75d";
+}
+:global .map-km:before {
+	content: "\e75e";
+}
+:global .map-je:before {
+	content: "\e75f";
+}
+:global .map-im:before {
+	content: "\e760";
+}
+:global .map-gg:before {
+	content: "\e761";
+}
+:global .map-yt:before {
+	content: "\e762";
+}
+:global .map-ag:before {
+	content: "\e763";
+}
+:global .map-vg:before {
+	content: "\e72d";
+}
+:global .map-vi:before {
+	content: "\e72e";
+}
+:global .map-bl:before {
+	content: "\e72f";
+}
+:global .map-ai:before {
+	content: "\e730";
+}
+:global .map-cw:before {
+	content: "\e731";
+}
+:global .map-bq:before {
+	content: "\e732";
+}
+:global .map-aw:before {
+	content: "\e733";
+}
+:global .map-sx:before {
+	content: "\e734";
+}
+:global .map-ms:before {
+	content: "\e735";
+}
+:global .map-mf:before {
+	content: "\e736";
+}
+:global .map-ky:before {
+	content: "\e737";
+}
+:global .map-kn:before {
+	content: "\e738";
+}
+:global .map-bm:before {
+	content: "\e739";
+}
+:global .map-ar-alt:before {
+	content: "\e73a";
+}
+:global .map-bv:before {
+	content: "\e73b";
+}
+:global .map-pn:before {
+	content: "\e73c";
+}
+:global .map-pf:before {
+	content: "\e73d";
+}
+:global .map-nu:before {
+	content: "\e73e";
+}
+:global .map-pw:before {
+	content: "\e73f";
+}
+:global .map-fm:before {
+	content: "\e740";
+}
+:global .map-tk:before {
+	content: "\e741";
+}
+:global .map-nr:before {
+	content: "\e742";
+}
+:global .map-ck:before {
+	content: "\e743";
+}
+:global .map-ki:before {
+	content: "\e744";
+}
+:global .map-to:before {
+	content: "\e745";
+}
+:global .map-tv:before {
+	content: "\e746";
+}
+:global .map-mp:before {
+	content: "\e747";
+}
+:global .map-wf:before {
+	content: "\e748";
+}
+:global .map-nf:before {
+	content: "\e749";
+}
+:global .map-cc:before {
+	content: "\e74a";
+}
+:global .map-gu:before {
+	content: "\e74b";
+}
+:global .map-cx:before {
+	content: "\e74c";
+}
+:global .map-as:before {
+	content: "\e74d";
+}
+:global .map-ws:before {
+	content: "\e74e";
+}
+:global .map-pt-alt:before {
+	content: "\e74f";
+}
+:global .map-es-alt:before {
+	content: "\e750";
+}
+:global .map-gi:before {
+	content: "\e751";
+}
+:global .map-va:before {
+	content: "\e752";
+}
+:global .map-hk:before {
+	content: "\e753";
+}
+:global .map-ie-alt:before {
+	content: "\e754";
+}
+:global .map-sg:before {
+	content: "\e72c";
+}
+:global .map-mc:before {
+	content: "\e72a";
+}
+:global .map-sm:before {
+	content: "\e72b";
+}
+:global .map-mm:before {
+	content: "\e727";
+}
+:global .map-sy:before {
+	content: "\e728";
+}
+:global .map-st:before {
+	content: "\e729";
+}
+:global .map-ph:before {
+	content: "\e6e5";
+}
+:global .map-id:before {
+	content: "\e6e7";
+}
+:global .map-my:before {
+	content: "\e6e9";
+}
+:global .map-bn:before {
+	content: "\e6eb";
+}
+:global .map-tl:before {
+	content: "\e6ed";
+}
+:global .map-th:before {
+	content: "\e6ef";
+}
+:global .map-kh:before {
+	content: "\e6f1";
+}
+:global .map-vn:before {
+	content: "\e6f3";
+}
+:global .map-la:before {
+	content: "\e6f5";
+}
+:global .map-jp:before {
+	content: "\e6f7";
+}
+:global .map-tw:before {
+	content: "\e6f9";
+}
+:global .map-kr:before {
+	content: "\e6fb";
+}
+:global .map-kp:before {
+	content: "\e6fd";
+}
+:global .map-bd:before {
+	content: "\e6fe";
+}
+:global .map-bt:before {
+	content: "\e6ff";
+}
+:global .map-np:before {
+	content: "\e700";
+}
+:global .map-lk:before {
+	content: "\e701";
+}
+:global .map-in:before {
+	content: "\e702";
+}
+:global .map-mn:before {
+	content: "\e703";
+}
+:global .map-tj:before {
+	content: "\e704";
+}
+:global .map-kg:before {
+	content: "\e705";
+}
+:global .map-pk:before {
+	content: "\e706";
+}
+:global .map-af:before {
+	content: "\e707";
+}
+:global .map-tm:before {
+	content: "\e708";
+}
+:global .map-uz:before {
+	content: "\e709";
+}
+:global .map-kz:before {
+	content: "\e70a";
+}
+:global .map-cn:before {
+	content: "\e70b";
+}
+:global .map-il:before {
+	content: "\e70c";
+}
+:global .map-ps:before {
+	content: "\e70d";
+}
+:global .map-lb:before {
+	content: "\e70e";
+}
+:global .map-kw:before {
+	content: "\e70f";
+}
+:global .map-bh:before {
+	content: "\e710";
+}
+:global .map-qa:before {
+	content: "\e711";
+}
+:global .map-om:before {
+	content: "\e712";
+}
+:global .map-ye:before {
+	content: "\e713";
+}
+:global .map-ae:before {
+	content: "\e714";
+}
+:global .map-rw:before {
+	content: "\e715";
+}
+:global .map-re:before {
+	content: "\e716";
+}
+:global .map-cv:before {
+	content: "\e717";
+}
+:global .map-gq:before {
+	content: "\e718";
+}
+:global .map-dj:before {
+	content: "\e719";
+}
+:global .map-bi:before {
+	content: "\e71a";
+}
+:global .map-sz:before {
+	content: "\e71b";
+}
+:global .map-ls:before {
+	content: "\e71c";
+}
+:global .map-eh:before {
+	content: "\e71d";
+}
+:global .map-er:before {
+	content: "\e71e";
+}
+:global .map-ug:before {
+	content: "\e71f";
+}
+:global .map-gw:before {
+	content: "\e720";
+}
+:global .map-gm:before {
+	content: "\e721";
+}
+:global .map-sl:before {
+	content: "\e722";
+}
+:global .map-lr:before {
+	content: "\e723";
+}
+:global .map-gh:before {
+	content: "\e724";
+}
+:global .map-tg:before {
+	content: "\e725";
+}
+:global .map-bj:before {
+	content: "\e726";
+}
+:global .map-glb-ar:before {
+	content: "\e6ee";
+}
+:global .map-glb-pa:before {
+	content: "\e6f0";
+}
+:global .map-glb-at:before {
+	content: "\e6f2";
+}
+:global .map-glb-sa:before {
+	content: "\e6f4";
+}
+:global .map-glb-na:before {
+	content: "\e6f6";
+}
+:global .map-glb-an:before {
+	content: "\e6f8";
+}
+:global .map-glb-me:before {
+	content: "\e6fa";
+}
+:global .map-glb-oc:before {
+	content: "\e6fc";
+}
+:global .map-glb-af:before {
+	content: "\e6ec";
+}
+:global .map-glb-as:before {
+	content: "\e6e6";
+}
+:global .map-glb-eu:before {
+	content: "\e6e8";
+}
+:global .map-glb-am:before {
+	content: "\e6ea";
+}
+:global .map-wrld-an:before {
+	content: "\e6e4";
+}
+:global .map-wrld-ca:before {
+	content: "\e6d9";
+}
+:global .map-wrld-se:before {
+	content: "\e6da";
+}
+:global .map-wrld-as:before {
+	content: "\e6db";
+}
+:global .map-wrld-me:before {
+	content: "\e6dc";
+}
+:global .map-wrld-af:before {
+	content: "\e6dd";
+}
+:global .map-wrld-eu:before {
+	content: "\e6de";
+}
+:global .map-wrld-am:before {
+	content: "\e6df";
+}
+:global .map-wrld-na:before {
+	content: "\e6e0";
+}
+:global .map-wrld-sa:before {
+	content: "\e6e1";
+}
+:global .map-wrld-oc:before {
+	content: "\e6e2";
+}
+:global .map-wrld-alt:before {
+	content: "\e6e3";
+}
+:global .map-wrld:before {
+	content: "\e6d8";
+}
+:global .map-ao:before {
+	content: "\e6b2";
+}
+:global .map-bf:before {
+	content: "\e6b3";
+}
+:global .map-bw:before {
+	content: "\e6b4";
+}
+:global .map-cd:before {
+	content: "\e6b5";
+}
+:global .map-cf:before {
+	content: "\e6b6";
+}
+:global .map-cg:before {
+	content: "\e6b7";
+}
+:global .map-ci:before {
+	content: "\e6b8";
+}
+:global .map-cm:before {
+	content: "\e6b9";
+}
+:global .map-dz:before {
+	content: "\e6ba";
+}
+:global .map-eg:before {
+	content: "\e6bb";
+}
+:global .map-et:before {
+	content: "\e6bc";
+}
+:global .map-ga:before {
+	content: "\e6bd";
+}
+:global .map-gn:before {
+	content: "\e6be";
+}
+:global .map-iq:before {
+	content: "\e6bf";
+}
+:global .map-ir:before {
+	content: "\e6c0";
+}
+:global .map-jo:before {
+	content: "\e6c1";
+}
+:global .map-ke:before {
+	content: "\e6c2";
+}
+:global .map-ly:before {
+	content: "\e6c3";
+}
+:global .map-ma:before {
+	content: "\e6c4";
+}
+:global .map-mg:before {
+	content: "\e6c5";
+}
+:global .map-ml:before {
+	content: "\e6c6";
+}
+:global .map-mr:before {
+	content: "\e6c7";
+}
+:global .map-mw:before {
+	content: "\e6c8";
+}
+:global .map-mz:before {
+	content: "\e6c9";
+}
+:global .map-na:before {
+	content: "\e6ca";
+}
+:global .map-ne:before {
+	content: "\e6cb";
+}
+:global .map-ng:before {
+	content: "\e6cc";
+}
+:global .map-sa:before {
+	content: "\e6cd";
+}
+:global .map-sd:before {
+	content: "\e6ce";
+}
+:global .map-sn:before {
+	content: "\e6cf";
+}
+:global .map-so:before {
+	content: "\e6d0";
+}
+:global .map-ss:before {
+	content: "\e6d1";
+}
+:global .map-td:before {
+	content: "\e6d2";
+}
+:global .map-tn:before {
+	content: "\e6d3";
+}
+:global .map-tz:before {
+	content: "\e6d4";
+}
+:global .map-za:before {
+	content: "\e6d5";
+}
+:global .map-zm:before {
+	content: "\e6d6";
+}
+:global .map-zw:before {
+	content: "\e6d7";
+}
+:global .map-fo:before {
+	content: "\e695";
+}
+:global .map-ge:before {
+	content: "\e696";
+}
+:global .map-am:before {
+	content: "\e697";
+}
+:global .map-az:before {
+	content: "\e698";
+}
+:global .map-ca-nb:before {
+	content: "\e699";
+}
+:global .map-mt:before {
+	content: "\e65a";
+}
+:global .map-ad:before {
+	content: "\e65b";
+}
+:global .map-li:before {
+	content: "\e65c";
+}
+:global .map-lu:before {
+	content: "\e65d";
+}
+:global .map-sj:before {
+	content: "\e65e";
+}
+:global .map-lt:before {
+	content: "\e65f";
+}
+:global .map-lv:before {
+	content: "\e660";
+}
+:global .map-ee:before {
+	content: "\e661";
+}
+:global .map-ru:before {
+	content: "\e662";
+}
+:global .map-gl:before {
+	content: "\e663";
+}
+:global .map-no:before {
+	content: "\e664";
+}
+:global .map-se:before {
+	content: "\e665";
+}
+:global .map-fi:before {
+	content: "\e666";
+}
+:global .map-cy:before {
+	content: "\e667";
+}
+:global .map-xk:before {
+	content: "\e668";
+}
+:global .map-rs:before {
+	content: "\e669";
+}
+:global .map-hr:before {
+	content: "\e66a";
+}
+:global .map-ba:before {
+	content: "\e66b";
+}
+:global .map-me:before {
+	content: "\e66c";
+}
+:global .map-mk:before {
+	content: "\e66d";
+}
+:global .map-by:before {
+	content: "\e66e";
+}
+:global .map-si:before {
+	content: "\e66f";
+}
+:global .map-hu:before {
+	content: "\e670";
+}
+:global .map-md:before {
+	content: "\e671";
+}
+:global .map-ro:before {
+	content: "\e672";
+}
+:global .map-al:before {
+	content: "\e673";
+}
+:global .map-bg:before {
+	content: "\e674";
+}
+:global .map-sk:before {
+	content: "\e675";
+}
+:global .map-cz:before {
+	content: "\e676";
+}
+:global .map-ua:before {
+	content: "\e677";
+}
+:global .map-tr:before {
+	content: "\e678";
+}
+:global .map-gr:before {
+	content: "\e679";
+}
+:global .map-dk:before {
+	content: "\e67a";
+}
+:global .map-at:before {
+	content: "\e67b";
+}
+:global .map-nl:before {
+	content: "\e67c";
+}
+:global .map-be:before {
+	content: "\e67d";
+}
+:global .map-ch:before {
+	content: "\e67e";
+}
+:global .map-pl:before {
+	content: "\e67f";
+}
+:global .map-pt:before {
+	content: "\e680";
+}
+:global .map-es:before {
+	content: "\e681";
+}
+:global .map-it:before {
+	content: "\e682";
+}
+:global .map-fr:before {
+	content: "\e683";
+}
+:global .map-de:before {
+	content: "\e684";
+}
+:global .map-ie:before {
+	content: "\e685";
+}
+:global .map-is:before {
+	content: "\e686";
+}
+:global .map-uk:before {
+	content: "\e687";
+}
+:global .map-uk-sc:before {
+	content: "\e69a";
+}
+:global .map-uk-en:before {
+	content: "\e69b";
+}
+:global .map-uk-wa:before {
+	content: "\e69c";
+}
+:global .map-uk-ni:before {
+	content: "\e69d";
+}
+:global .map-aq:before {
+	content: "\e691";
+}
+:global .map-tf:before {
+	content: "\e692";
+}
+:global .map-hm:before {
+	content: "\e693";
+}
+:global .map-gs:before {
+	content: "\e694";
+}
+:global .map-au:before {
+	content: "\e635";
+}
+:global .map-au-wa:before {
+	content: "\e69e";
+}
+:global .map-au-nt:before {
+	content: "\e69f";
+}
+:global .map-au-ql:before {
+	content: "\e6a0";
+}
+:global .map-au-sa:before {
+	content: "\e6a1";
+}
+:global .map-au-nw:before {
+	content: "\e6a2";
+}
+:global .map-au-vc:before {
+	content: "\e6a3";
+}
+:global .map-au-ts:before {
+	content: "\e6a4";
+}
+:global .map-au-ac:before {
+	content: "\e6a5";
+}
+:global .map-fj:before {
+	content: "\e636";
+}
+:global .map-nc:before {
+	content: "\e637";
+}
+:global .map-nz:before {
+	content: "\e638";
+}
+:global .map-pg:before {
+	content: "\e639";
+}
+:global .map-sb:before {
+	content: "\e63a";
+}
+:global .map-vu:before {
+	content: "\e63b";
+}
+:global .map-ar:before {
+	content: "\e63c";
+}
+:global .map-bo:before {
+	content: "\e63d";
+}
+:global .map-br:before {
+	content: "\e63e";
+}
+:global .map-bb:before {
+	content: "\e688";
+}
+:global .map-bs:before {
+	content: "\e63f";
+}
+:global .map-bz:before {
+	content: "\e640";
+}
+:global .map-ca:before {
+	content: "\e641";
+}
+:global .map-ca-yt:before {
+	content: "\e6a6";
+}
+:global .map-ca-bc:before {
+	content: "\e6a7";
+}
+:global .map-ca-nt:before {
+	content: "\e6a8";
+}
+:global .map-ca-nu:before {
+	content: "\e6a9";
+}
+:global .map-ca-ab:before {
+	content: "\e6aa";
+}
+:global .map-ca-sk:before {
+	content: "\e6ab";
+}
+:global .map-ca-mb:before {
+	content: "\e6ac";
+}
+:global .map-ca-on:before {
+	content: "\e6ad";
+}
+:global .map-ca-qc:before {
+	content: "\e6ae";
+}
+:global .map-ca-pe:before {
+	content: "\e6af";
+}
+:global .map-ca-nl:before {
+	content: "\e6b0";
+}
+:global .map-ca-ns:before {
+	content: "\e6b1";
+}
+:global .map-cl:before {
+	content: "\e642";
+}
+:global .map-co:before {
+	content: "\e643";
+}
+:global .map-cr:before {
+	content: "\e644";
+}
+:global .map-cu:before {
+	content: "\e645";
+}
+:global .map-do:before {
+	content: "\e646";
+}
+:global .map-dm:before {
+	content: "\e689";
+}
+:global .map-ec:before {
+	content: "\e647";
+}
+:global .map-fk:before {
+	content: "\e648";
+}
+:global .map-gf:before {
+	content: "\e649";
+}
+:global .map-gd:before {
+	content: "\e68a";
+}
+:global .map-gp:before {
+	content: "\e68b";
+}
+:global .map-gt:before {
+	content: "\e64a";
+}
+:global .map-gy:before {
+	content: "\e64b";
+}
+:global .map-hn:before {
+	content: "\e64c";
+}
+:global .map-ht:before {
+	content: "\e64d";
+}
+:global .map-jm:before {
+	content: "\e64e";
+}
+:global .map-mq:before {
+	content: "\e68c";
+}
+:global .map-mx:before {
+	content: "\e64f";
+}
+:global .map-ni:before {
+	content: "\e650";
+}
+:global .map-pa:before {
+	content: "\e651";
+}
+:global .map-pe:before {
+	content: "\e652";
+}
+:global .map-pm:before {
+	content: "\e68d";
+}
+:global .map-pr:before {
+	content: "\e653";
+}
+:global .map-py:before {
+	content: "\e654";
+}
+:global .map-sr:before {
+	content: "\e655";
+}
+:global .map-sv:before {
+	content: "\e656";
+}
+:global .map-vc:before {
+	content: "\e68e";
+}
+:global .map-lc:before {
+	content: "\e68f";
+}
+:global .map-tt:before {
+	content: "\e657";
+}
+:global .map-tc:before {
+	content: "\e690";
+}
+:global .map-uy:before {
+	content: "\e658";
+}
+:global .map-ve:before {
+	content: "\e659";
+}
+:global .map-us-ak:before {
+	content: "\e601";
+}
+:global .map-us-al:before {
+	content: "\e602";
+}
+:global .map-us-ar:before {
+	content: "\e603";
+}
+:global .map-us-az:before {
+	content: "\e604";
+}
+:global .map-us-ca:before {
+	content: "\e605";
+}
+:global .map-us-co:before {
+	content: "\e606";
+}
+:global .map-us-ct:before {
+	content: "\e607";
+}
+:global .map-us-de:before {
+	content: "\e608";
+}
+:global .map-us-fl:before {
+	content: "\e609";
+}
+:global .map-us-ga:before {
+	content: "\e60a";
+}
+:global .map-us-hi:before {
+	content: "\e60b";
+}
+:global .map-us-ia:before {
+	content: "\e60c";
+}
+:global .map-us-id:before {
+	content: "\e60d";
+}
+:global .map-us-il:before {
+	content: "\e60e";
+}
+:global .map-us-in:before {
+	content: "\e60f";
+}
+:global .map-us-ks:before {
+	content: "\e610";
+}
+:global .map-us-ky:before {
+	content: "\e611";
+}
+:global .map-us-la:before {
+	content: "\e612";
+}
+:global .map-us-ma:before {
+	content: "\e613";
+}
+:global .map-us-md:before {
+	content: "\e614";
+}
+:global .map-us-me:before {
+	content: "\e615";
+}
+:global .map-us-mi:before {
+	content: "\e616";
+}
+:global .map-us-mn:before {
+	content: "\e617";
+}
+:global .map-us-mo:before {
+	content: "\e618";
+}
+:global .map-us-ms:before {
+	content: "\e619";
+}
+:global .map-us-mt:before {
+	content: "\e61a";
+}
+:global .map-us-nc:before {
+	content: "\e61b";
+}
+:global .map-us-nd:before {
+	content: "\e61c";
+}
+:global .map-us-ne:before {
+	content: "\e61d";
+}
+:global .map-us-nh:before {
+	content: "\e61e";
+}
+:global .map-us-nj:before {
+	content: "\e61f";
+}
+:global .map-us-nm:before {
+	content: "\e620";
+}
+:global .map-us-nv:before {
+	content: "\e621";
+}
+:global .map-us-ny:before {
+	content: "\e622";
+}
+:global .map-us-oh:before {
+	content: "\e623";
+}
+:global .map-us-ok:before {
+	content: "\e624";
+}
+:global .map-us-or:before {
+	content: "\e625";
+}
+:global .map-us-pa:before {
+	content: "\e626";
+}
+:global .map-us-ri:before {
+	content: "\e627";
+}
+:global .map-us-sc:before {
+	content: "\e628";
+}
+:global .map-us-sd:before {
+	content: "\e629";
+}
+:global .map-us-tn:before {
+	content: "\e62a";
+}
+:global .map-us-tx:before {
+	content: "\e62b";
+}
+:global .map-us-ut:before {
+	content: "\e62c";
+}
+:global .map-us-va:before {
+	content: "\e62d";
+}
+:global .map-us-vt:before {
+	content: "\e62e";
+}
+:global .map-us-wa:before {
+	content: "\e62f";
+}
+:global .map-us-wi:before {
+	content: "\e630";
+}
+:global .map-us-wv:before {
+	content: "\e631";
+}
+:global .map-us-wy:before {
+	content: "\e632";
+}
+:global .map-us-dc:before {
+	content: "\e634";
+}
+:global .map-us:before {
+	content: "\e600";
+}
+:global .map-us-alt:before {
+	content: "\e633";
+}
