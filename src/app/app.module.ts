@@ -64,7 +64,7 @@ import { reducer } from './reducers';
     Angular2DataTableModule,
     ReactiveFormsModule,
     NgbModule.forRoot(),
-    SimpleNotificationsModule, 
+    SimpleNotificationsModule,
     RouterModule.forRoot(routes),
     StoreModule.provideStore(reducer),
     RouterStoreModule.connectRouter(),

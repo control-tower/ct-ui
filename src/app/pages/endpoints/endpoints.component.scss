@@ -3,6 +3,10 @@
   &.scroll-vertical {
     height: 75vh;
   }
+  .datatable-row-detail{
+    height: 300px;
+    overflow-y: scroll;
+  }
 }
 app-button {
   margin-right: 10px;

@@ -4,12 +4,12 @@
     <app-button basic="'true'" table="'true'" text="Refresh result" (click)="refresh($event)"></app-button>
   </div>
   <swui-datatable #mydatatable class='material expandable scroll-vertical' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
-    [detailRowHeight]="100" [scrollbarV]="50" [rows]='endpointsFilter'>
+    [detailRowHeight]="300" [scrollbarV]="50" [rows]='endpointsFilter'>
     <swui-datatable-row-detail>
       <template let-row="row" swui-datatable-row-detail-template>
-        <div style="padding-left:35px;">
+        <div style="height: 300px; overflow-y: scroll">
           <div><strong>Redirects</strong></div>
-          <div></div>
+          <pre>{{row?.redirect | json}}</pre>
         </div>
       </template>
     </swui-datatable-row-detail>
@@ -34,6 +34,6 @@
         <strong>{{value}}</strong>
       </template>
     </swui-datatable-column>
-    
+
   </swui-datatable>
 </div>

@@ -5,6 +5,7 @@ import { PluginComponent } from './plugin/plugin.component';
 import { SearchComponent } from './search/search.component';
 import { ButtonComponent } from './button/button.component';
 import { MenuComponent } from './menu/menu.component';
+import { PrettyPrintPipe } from './prettyprint.pipe';
 
 import { Headers } from '@angular/http';
 import { NgModule } from '@angular/core';
@@ -22,6 +23,7 @@ export const COMPONENTS = [
   SelectComponent,
   DialogComponent,
   ModalComponent,
+  PrettyPrintPipe
 ];
 
 
