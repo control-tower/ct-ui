@@ -4,6 +4,8 @@
 		<div class="card-title">
 			<h2>
 				{{plugin.name}}
+				<span class="active-text" *ngIf="plugin.active"> / activated_</span>
+				<span class="desactive-text" *ngIf="!plugin.active"> / desactivated_</span>
 			</h2>
 		</div>
 		<div class="card-main">
@@ -11,7 +13,7 @@
 		</div>
 		<div class="card-button-contain">
 			<button (click)="editPlugin()">Edit</button>
-      <button *ngIf="plugin.active" class="green-active" (click)="toggleActivePlugin(false)">Desactivate</button>
+      <button *ngIf="plugin.active" class="orange-active" (click)="toggleActivePlugin(false)">Desactivate</button>
 			<button *ngIf="!plugin.active" (click)="toggleActivePlugin(true)">Activate</button>
 		</div>
 	</div>
