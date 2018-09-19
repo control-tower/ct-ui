@@ -1,0 +1,13 @@
+<template ngbModalContainer #modal let-c="close" let-d="dismiss">
+  <div class="c-modal-question">
+    <h3>
+      {{title}}
+    </h3>
+    <ng-content></ng-content>
+    <div>
+      <app-button basic="'true'" table="'true'" text="Cancel" (click)="d()"></app-button>
+      <app-button basic="'true'" table="'true'" text="Accept" (click)="c()"></app-button>
+    </div>
+    
+  </div>
+</template>

@@ -1,0 +1,27 @@
+@import '~bootstrap/scss/bootstrap';
+@import '~@swimlane/ngx-datatable/src/components/datatable.component';
+@import '~@swimlane/ngx-datatable/src/themes/material';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+
+@import 'src/assets/styles/mapglyphs';
+@import 'src/assets/styles/base';
+
+.clearfix:after {
+   content: " "; /* Older browser do not support empty content */
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+
+/* dialog modal */
+.dialog {
+  background-color: rgba($color-2, .95);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}

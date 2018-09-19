@@ -1,0 +1,47 @@
+@import '../../../assets/styles/base.scss';
+.c-profile-page {
+  background-color: $color-3;
+  display: block;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 20px;
+  width: 100%;
+
+  .text-token {
+    line-height: 1.7;
+    word-break: break-word;
+  }
+
+  .content-buttons {
+    display: block;
+
+    button {
+      display: block;
+      margin-bottom: 20px;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+        margin-right: 0;
+      }
+
+      @media #{$mq-tablet} {
+        margin-bottom: 0;
+        margin-right: 100px;
+        width: auto;
+      }
+    }
+
+    @media #{$mq-tablet} {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  hr {
+    background-color: $color-5;
+    border: 0;
+    height: 2px;
+    margin: 25px 0;
+  }
+}

@@ -1,0 +1,5 @@
+<div class="content-select">
+  <select #select (change)="changeEvent($event, select.value)" [value]="value">
+    <ng-content></ng-content>
+  </select>
+</div>

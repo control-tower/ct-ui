@@ -1,0 +1,11 @@
+<div class="l-content l-content-basic">
+  <div class="c-profile-page">
+    <div class="text-token">
+      {{token$ | async}}
+    </div>
+    <hr>
+    <div class="content-buttons">
+      <app-button basic="'true'" table="'true'" text="Generate token" (click)="generateToken($event)"></app-button>
+    </div>
+  </div>
+</div>

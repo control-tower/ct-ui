@@ -1,0 +1,108 @@
+@import '../../../assets/styles/base.scss';
+
+.c-card-list {
+  background-color: $color-3;
+  border: 1px solid $color-6;
+  display: inline-block;
+  flex-grow: 1;
+  margin-bottom: 40px;
+  padding: 0;
+  padding-bottom: 0;
+  position: relative;
+  width: 100%;
+
+  .button-refresh {
+    background-color: $color-3;
+    border: 1px solid $color-6;
+    cursor: pointer;
+    font-family: $font-family-1;
+    padding: 10px 15px;
+    position: absolute;
+    right: -1px;
+    top: -19px;
+    transition: .2s;
+
+    &:hover {
+      background-color: $color-1;
+      color: $color-3;
+    }
+  }
+
+  .card-title {
+    padding: 20px 20px 0;
+
+    h2 {
+      color: $color-2;
+      font-family: $font-family-1;
+      font-size: $font-size-xnormal;
+
+      @media #{$mq-laptop} {
+        font-size: $font-size-mediun;
+      }
+
+      &::after {
+        background-color: $color-6;
+        content: ' ';
+        display: block;
+        height: 1px;
+        margin: 5px 0;
+        width: 100%;
+      }
+    }
+  }
+
+  .card-main {
+    padding: 20px 20px 0;
+
+    h3 {
+      font-size: $font-size-mediun;
+      word-break: break-word;
+
+      @media #{$mq-laptop} {
+        font-size: $font-size-xxnormal;
+      }
+    }
+  }
+
+  .card-button-contain {
+    padding-top: 20px;
+
+    button {
+      background-color: $color-3;
+      border: 0;
+      cursor: pointer;
+      outline: 0;
+      padding: 10px;
+      position: relative;
+      width: 50%;
+      float: left;
+
+      &:first-child {
+        border-bottom: 8px solid $color-2;
+
+        &:active {
+          border-bottom: 4px solid $color-2;
+          top: 5px;
+        }
+      }
+
+      &:last-child {
+        border-bottom: 8px solid $color-7;
+
+        &:active {
+          border-bottom: 4px solid $color-7;
+          top: 5px;
+        }
+
+        &.green-active {
+          border-bottom: 8px solid $color-9;
+
+          &:active {
+            border-bottom: 4px solid $color-9;
+            top: 5px;
+          }
+        }
+      }
+    }
+  }
+}

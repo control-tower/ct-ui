@@ -1,0 +1,33 @@
+<div class="three-numbers">
+	<div>
+		<h2>{{mainInfo.users}}</h2>
+		<p>Users</p>
+	</div>
+	<div>
+		<h2>{{mainInfo.microservices}}</h2>
+		<p>Microservices</p>
+	</div>
+	<div>
+		<h2>{{mainInfo.endpoints}}</h2>
+		<p>Endpoints</p>
+	</div>
+</div>
+<div class="two-numbers">
+	<div>
+		<h2>{{mainInfo.countRequestToday?.count}}</h2>
+		<p>Requests today</p>
+	</div>
+	<div>
+		<h2>{{mainInfo.countRequestLastWeek?.count}}</h2>
+		<p>Requests last week</p>
+	</div>
+</div>
+<hr>
+<div class="countries-list">
+	<div class="contain-map" *ngFor="let country of mainInfo.countRequestTodayByCountry">		
+		<div>
+			<span class="mg huge map-{{country._id | lowercase}}"></span>
+			<span class="text-country"><b>{{country._id}}</b><br>{{country.count}}</span>
+		</div>		
+	</div>
+</div>

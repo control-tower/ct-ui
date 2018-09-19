@@ -1,0 +1,44 @@
+<div class="l-content">
+  <div class="clearfix">
+    <app-search placeholder="Search microservices" (update)='updateFilter($event)'></app-search>
+    <app-button basic="'true'" table="'true'" text="Refresh result" (click)="refresh($event)"></app-button>
+  </div>
+  <ngx-datatable #mydatatable class='material ngx-datatable expandable scroll-vertical' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+    [detailRowHeight]="100" [scrollbarV]="50" [rows]='microservicesFilter'>
+    <ngx-datatable-row-detail>
+      <template let-row="row" ngx-datatable-row-detail-template>
+        <div style="padding-left:35px;">
+          <div><strong>Address</strong></div>
+          <div></div>
+        </div>
+      </template>
+    </ngx-datatable-row-detail>
+    <ngx-datatable-column [width]="50" [resizeable]="false" [sortable]="false" [draggable]="false" [canAutoResize]="false">
+      <template let-row="row" ngx-datatable-cell-template>
+        <a href="#" [class.icon-right]="!row.$$expanded" [class.icon-down]="row.$$expanded" title="Expand/Collapse Row" (click)="toggleExpandRow($event, row)">
+        </a>
+      </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Name" width="200">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Url" width="80">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Status" width="200">
+      <template let-value="value" ngx-datatable-cell-template>
+        <strong>{{value}}</strong>
+      </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Last Check" width="300">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{row.infoStatus.lastCheck | date:'dd/MM/yy HH:mm:ss'}}
+      </template>
+    </ngx-datatable-column>
+
+  </ngx-datatable>
+</div>

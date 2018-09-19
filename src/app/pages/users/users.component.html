@@ -1,0 +1,55 @@
+<div class="l-content">
+  <div class="clearfix">
+    <app-search placeholder="Search users" (update)='updateFilter($event)'></app-search>
+    <app-button basic="'true'" table="'true'" text="Create User" (click)="create($event)"></app-button>
+    <app-button basic="'true'" table="'true'" text="Refresh result" (click)="refresh($event)"></app-button>
+  </div>
+  <ngx-datatable class='material ngx-datatable scroll-vertical' [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="50"
+    [detailRowHeight]="100" [scrollbarV]="50" [rows]='usersFilter'>
+    <ngx-datatable-column name="Id" width="200">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{row._id}}
+      </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Email" width="80">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        {{value}}
+      </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Provider" width="200">
+      <template let-value="value" ngx-datatable-cell-template>
+        <strong>{{value}}</strong>
+      </template>
+    </ngx-datatable-column>
+    <ngx-datatable-column name="Role" width="300">
+      <template let-row="row" let-value="value" ngx-datatable-cell-template>
+        <app-select [value]="row.role" (update)="updateRole(row, $event)">
+          <option [value]="'ADMIN'">ADMIN</option>
+          <option [value]="'MANAGER'">MANAGER</option>
+          <option [value]="'USER'">USER</option>
+        </app-select>
+      </template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+<app-modal #createUserModal [title]="'Create new user'" (close)="saveUser()">
+  <form [formGroup]="registerUserForm">
+    <div class="form-group" [class.has-danger]="registerUserForm.controls.email.dirty && registerUserForm.controls.email.errors">
+      <input type="email" placeholder="Email" class="input-dialog" formControlName="email" />
+      <div class="form-control-feedback" *ngIf="registerUserForm.controls.email.dirty && registerUserForm.controls.email.errors?.required">Field required</div>
+      <div class="form-control-feedback" *ngIf="registerUserForm.controls.email.dirty && registerUserForm.controls.email.errors?.pattern">Email invalid</div>
+    </div>
+    <div class="form-group" [class.has-danger]="registerUserForm.controls.role.dirty && registerUserForm.controls.role.errors">
+      <select class="input-dialog" formControlName="role">
+          <option>USER</option>
+          <option>MANAGER</option>
+          <option>ADMIN</option>
+      </select>
+      <div class="form-control-feedback" *ngIf="registerUserForm.controls.role.dirty && registerUserForm.controls.role.errors?.required">Field required</div>
+    </div>
+    <div class="form-group" [class.has-danger]="registerUserForm.controls.apps.dirty && (registerUserForm.controls.apps.errors)">
+      <input type="text" placeholder="Apps (gfw,rw,prep,etc)" class="input-dialog" formControlName="apps">
+      <div class="form-control-feedback" *ngIf="registerUserForm.controls.apps.dirty && registerUserForm.controls.apps.errors?.required">Field required</div>
+    </div>
+  </form>
+</app-modal>

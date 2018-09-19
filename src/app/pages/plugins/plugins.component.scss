@@ -1,0 +1,21 @@
+@import '../../../assets/styles/base.scss';
+.l-content.-list-card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  app-plugin {
+    width: 100%;
+    @media #{$mq-tablet} {
+      width: calc(100% * (1/2) - 20px);
+    }
+    @media #{$mq-laptop} {
+      width: calc(100% * (1/3) - 20px);
+    }
+  }
+}
+
+juicy-jsoneditor {
+  height: 280px;
+  margin-top: 10px;
+}

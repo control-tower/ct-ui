@@ -1,0 +1,10 @@
+<div class="l-content -list-card">
+  <app-plugin *ngFor="let plugin of plugins$ | async" [plugin]="plugin" (flushCache)="flushCache($event)" (toggleActive)="toggleActive(plugin, $event)" (edit)="edit(plugin)" ></app-plugin>
+</div>
+
+<app-dialog [question]="'Sure that you want change the state of the plugin?'" #dialogToggle (close)="closeToggleDialog()"></app-dialog>
+<app-dialog [question]="'Are you sure that you want flush cache?'" #dialogFlush (close)="closeFlushDialog()"></app-dialog>
+
+<app-modal #editModal [title]="'Edit config plugin'" (close)="saveEdit()">
+  <juicy-jsoneditor #jsonEditor [json]="config" ></juicy-jsoneditor>
+</app-modal>

@@ -1,0 +1,14 @@
+<div class="c-sidebar">
+	<div class="sidebar-top">
+		<h1>control<br>tower.</h1>
+		<a [routerLink]="['/dashboard']" class="sidebar-option" [routerLinkActive]="['sidebar-option-selected']">Dashboard</a>
+    <a [routerLink]="['/plugins']" class="sidebar-option" [routerLinkActive]="['sidebar-option-selected']">Plugins</a>
+    <a [routerLink]="['/microservices']" class="sidebar-option" [routerLinkActive]="['sidebar-option-selected']">Microservices</a>
+    <a [routerLink]="['/endpoints']" class="sidebar-option" [routerLinkActive]="['sidebar-option-selected']">Endpoints</a>
+    <a [routerLink]="['/users']" class="sidebar-option" [routerLinkActive]="['sidebar-option-selected']">Users</a>
+    <a [routerLink]="['/profile']" class="sidebar-option" [routerLinkActive]="['sidebar-option-selected']">Profile</a>	
+	</div>
+	<div class="sidebar-bottom">
+		<app-button text="Logout" (click)="logout($event)"></app-button>
+	</div>
+</div>

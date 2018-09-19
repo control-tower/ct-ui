@@ -1,0 +1,43 @@
+@import '../../../assets/styles/base.scss';
+app-button {
+  margin-right: 10px;
+  float: right;
+  &:first-of-type {
+    margin-right: 0;
+  }
+}
+
+.ngx-datatable {
+  margin-top: 10px;
+  &.scroll-vertical {
+    height: 75vh;
+  }
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background-color: $color-3;
+    border: 0;
+    border-bottom: 2px solid $color-2;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: $font-family-2;
+    max-width: 200px;
+    min-width: 100px;
+    outline: 0;
+    padding-bottom: 5px;
+    width: 100%;
+  }
+}
+.form-group{
+  .input-dialog {
+    display: block;
+    height: 50px;
+    margin: 25px auto 0;
+    padding: 10px;
+    width: 80%;
+  }
+  .form-control-feedback{
+    width: 80%;
+    margin: 5px auto 0;
+  }
+}
