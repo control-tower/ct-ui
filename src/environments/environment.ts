@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://api.apihighways.org'
+  apiUrl: 'https://production-api.globalforestwatch.org'
 };

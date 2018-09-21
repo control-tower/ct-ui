@@ -7,12 +7,12 @@ import { URLSearchParams } from "@angular/http";
 @Injectable()
 export class LoggedInGuard implements CanActivate {
 
-  static BASE_URL: string = `${environment.apiUrl}/auth`;
+  static BASE_URL: string = `https://production-api.globalforestwatch.org/auth`;
 
   constructor(private authService: AuthService) { }
 
   canActivate(): Promise<any> {
-    
+
     return new Promise((resolve, reject) => {
       this.authService.isLoggedIn().then(() => {
         let params = new URLSearchParams(window.location.search.substring(1, window.location.search.length));
